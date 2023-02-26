@@ -11,17 +11,22 @@ RM := rm -rf
 -include MCAL/ATMEGA32/GIE/subdir.mk
 -include MCAL/ATMEGA32/EXTI/subdir.mk
 -include MCAL/ATMEGA32/DIO/subdir.mk
+-include MCAL/ATMEGA32/ADC/subdir.mk
 -include HAL/LCD/subdir.mk
 -include HAL/Keypad/subdir.mk
 -include Application/Stepper\ motor/subdir.mk
 -include Application/Keypad\ with\ LCD/subdir.mk
 -include Application/H-Bridge/subdir.mk
+-include Application/External\ interrupt\ +\ start\ code\ from\ start\ of\ super\ loop/subdir.mk
 -include Application/External\ Interrupts/subdir.mk
 -include Application/Empty\ main/subdir.mk
 -include Application/DIP_Switch/subdir.mk
 -include Application/DC\ Motor/subdir.mk
 -include Application/Create\ character\ and\ move\ it\ in\ CGRAM/subdir.mk
 -include Application/CGRAM/subdir.mk
+-include Application/ADC\ with\ temp\ sensor/subdir.mk
+-include Application/ADC\ with\ potentiometer\ and\ light\ sensor/subdir.mk
+-include Application/2\ External\ interrupt\ with\ priorities/subdir.mk
 -include subdir.mk
 -include objects.mk
 

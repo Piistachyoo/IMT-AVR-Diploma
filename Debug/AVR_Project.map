@@ -1,7 +1,11 @@
 Archive member included because of file (symbol)
 
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                              ./Application/ADC with temp sensor/main.o (__mulsi3)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
                               ./HAL/LCD/LCD_program.o (__udivmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                              ./Application/ADC with temp sensor/main.o (__udivmodsi4)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
@@ -50,11 +54,13 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32
 LOAD ./MCAL/ATMEGA32/GIE/GIE_program.o
 LOAD ./MCAL/ATMEGA32/EXTI/EXTI_program.o
 LOAD ./MCAL/ATMEGA32/DIO/DIO_program.o
+LOAD ./MCAL/ATMEGA32/ADC/ADC_program.o
 LOAD ./HAL/LCD/LCD_program.o
 LOAD ./HAL/Keypad/Keypad_program.o
 LOAD ./Application/Stepper motor/main.o
 LOAD ./Application/Keypad with LCD/main.o
 LOAD ./Application/H-Bridge/main.o
+LOAD ./Application/External interrupt + start code from start of super loop/main.o
 LOAD ./Application/External Interrupts/main.o
 LOAD ./Application/Empty main/main.o
 LOAD ./Application/DIP_Switch/DIO_prog.o
@@ -62,6 +68,9 @@ LOAD ./Application/DIP_Switch/main.o
 LOAD ./Application/DC Motor/main.o
 LOAD ./Application/Create character and move it in CGRAM/main.o
 LOAD ./Application/CGRAM/main.o
+LOAD ./Application/ADC with temp sensor/main.o
+LOAD ./Application/ADC with potentiometer and light sensor/main.o
+LOAD ./Application/2 External interrupt with priorities/main.o
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
@@ -156,7 +165,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x3d78
+.text           0x00000000     0x3a52
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -210,6 +219,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.init9)
  *(.text)
  .text          0x0000007e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x0000007e                __vector_1
                 0x0000007e                __vector_12
                 0x0000007e                __bad_interrupt
                 0x0000007e                __vector_6
@@ -222,6 +232,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x0000007e                __vector_5
                 0x0000007e                __vector_4
                 0x0000007e                __vector_9
+                0x0000007e                __vector_2
                 0x0000007e                __vector_15
                 0x0000007e                __vector_8
                 0x0000007e                __vector_14
@@ -232,11 +243,13 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text          0x00000082        0x0 ./MCAL/ATMEGA32/GIE/GIE_program.o
  .text          0x00000082        0x0 ./MCAL/ATMEGA32/EXTI/EXTI_program.o
  .text          0x00000082        0x0 ./MCAL/ATMEGA32/DIO/DIO_program.o
+ .text          0x00000082        0x0 ./MCAL/ATMEGA32/ADC/ADC_program.o
  .text          0x00000082        0x0 ./HAL/LCD/LCD_program.o
  .text          0x00000082        0x0 ./HAL/Keypad/Keypad_program.o
  .text          0x00000082        0x0 ./Application/Stepper motor/main.o
  .text          0x00000082        0x0 ./Application/Keypad with LCD/main.o
  .text          0x00000082        0x0 ./Application/H-Bridge/main.o
+ .text          0x00000082        0x0 ./Application/External interrupt + start code from start of super loop/main.o
  .text          0x00000082        0x0 ./Application/External Interrupts/main.o
  .text          0x00000082        0x0 ./Application/Empty main/main.o
  .text          0x00000082        0x0 ./Application/DIP_Switch/DIO_prog.o
@@ -244,7 +257,12 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text          0x00000082        0x0 ./Application/DC Motor/main.o
  .text          0x00000082        0x0 ./Application/Create character and move it in CGRAM/main.o
  .text          0x00000082        0x0 ./Application/CGRAM/main.o
+ .text          0x00000082        0x0 ./Application/ADC with temp sensor/main.o
+ .text          0x00000082        0x0 ./Application/ADC with potentiometer and light sensor/main.o
+ .text          0x00000082        0x0 ./Application/2 External interrupt with priorities/main.o
+ .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
  .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
  .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
  .text          0x00000082       0x58 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
@@ -321,78 +339,82 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text.DIO_vSet4MSBValue
                 0x00001724      0x12e ./MCAL/ATMEGA32/DIO/DIO_program.o
                 0x00001724                DIO_vSet4MSBValue
+ .text.ADC_vInit
+                0x00001852       0x64 ./MCAL/ATMEGA32/ADC/ADC_program.o
+                0x00001852                ADC_vInit
+ .text.ADC_u16Read
+                0x000018b6      0x148 ./MCAL/ATMEGA32/ADC/ADC_program.o
+                0x000018b6                ADC_u16Read
  .text.LCD_vInit
-                0x00001852      0x50a ./HAL/LCD/LCD_program.o
-                0x00001852                LCD_vInit
+                0x000019fe      0x50a ./HAL/LCD/LCD_program.o
+                0x000019fe                LCD_vInit
  .text.LCD_vSendCmd
-                0x00001d5c      0x3e8 ./HAL/LCD/LCD_program.o
-                0x00001d5c                LCD_vSendCmd
+                0x00001f08      0x3e8 ./HAL/LCD/LCD_program.o
+                0x00001f08                LCD_vSendCmd
  .text.LCD_vDisplayChar
-                0x00002144      0x3e8 ./HAL/LCD/LCD_program.o
-                0x00002144                LCD_vDisplayChar
+                0x000022f0      0x3e8 ./HAL/LCD/LCD_program.o
+                0x000022f0                LCD_vDisplayChar
  .text.LCD_vDisplayString
-                0x0000252c       0x56 ./HAL/LCD/LCD_program.o
-                0x0000252c                LCD_vDisplayString
+                0x000026d8       0x56 ./HAL/LCD/LCD_program.o
+                0x000026d8                LCD_vDisplayString
  .text.LCD_vDisplayNumber
-                0x00002582       0xba ./HAL/LCD/LCD_program.o
-                0x00002582                LCD_vDisplayNumber
+                0x0000272e       0xba ./HAL/LCD/LCD_program.o
+                0x0000272e                LCD_vDisplayNumber
  .text.LCD_vGoToRowCol
-                0x0000263c       0x50 ./HAL/LCD/LCD_program.o
-                0x0000263c                LCD_vGoToRowCol
+                0x000027e8       0x50 ./HAL/LCD/LCD_program.o
+                0x000027e8                LCD_vGoToRowCol
  .text.LCD_vShiftDisplay
-                0x0000268c      0x266 ./HAL/LCD/LCD_program.o
-                0x0000268c                LCD_vShiftDisplay
+                0x00002838      0x266 ./HAL/LCD/LCD_program.o
+                0x00002838                LCD_vShiftDisplay
  .text.LCD_vStoreSpecChar
-                0x000028f2      0x156 ./HAL/LCD/LCD_program.o
-                0x000028f2                LCD_vStoreSpecChar
+                0x00002a9e      0x156 ./HAL/LCD/LCD_program.o
+                0x00002a9e                LCD_vStoreSpecChar
  .text.KPD_vInitKeypad
-                0x00002a48       0x2e ./HAL/Keypad/Keypad_program.o
-                0x00002a48                KPD_vInitKeypad
+                0x00002bf4       0x2e ./HAL/Keypad/Keypad_program.o
+                0x00002bf4                KPD_vInitKeypad
  .text.KPD_vGetPressedKey
-                0x00002a76      0x1d6 ./HAL/Keypad/Keypad_program.o
-                0x00002a76                KPD_vGetPressedKey
- .text.main     0x00002c4c      0x252 ./Application/External Interrupts/main.o
-                0x00002c4c                main
- .text.__vector_1
-                0x00002e9e      0x238 ./Application/External Interrupts/main.o
-                0x00002e9e                __vector_1
- .text.__vector_2
-                0x000030d6      0x238 ./Application/External Interrupts/main.o
-                0x000030d6                __vector_2
+                0x00002c22      0x1d6 ./HAL/Keypad/Keypad_program.o
+                0x00002c22                KPD_vGetPressedKey
  .text.SET_Direction
-                0x0000330e      0x204 ./Application/DIP_Switch/DIO_prog.o
-                0x0000330e                SET_Direction
+                0x00002df8      0x204 ./Application/DIP_Switch/DIO_prog.o
+                0x00002df8                SET_Direction
  .text.SET_State
-                0x00003512      0x204 ./Application/DIP_Switch/DIO_prog.o
-                0x00003512                SET_State
+                0x00002ffc      0x204 ./Application/DIP_Switch/DIO_prog.o
+                0x00002ffc                SET_State
  .text.GET_State
-                0x00003716      0x104 ./Application/DIP_Switch/DIO_prog.o
-                0x00003716                GET_State
+                0x00003200      0x104 ./Application/DIP_Switch/DIO_prog.o
+                0x00003200                GET_State
  .text.SET_Direction_4LSB
-                0x0000381a      0x130 ./Application/DIP_Switch/DIO_prog.o
-                0x0000381a                SET_Direction_4LSB
+                0x00003304      0x130 ./Application/DIP_Switch/DIO_prog.o
+                0x00003304                SET_Direction_4LSB
  .text.SET_Direction_4MSB
-                0x0000394a      0x130 ./Application/DIP_Switch/DIO_prog.o
-                0x0000394a                SET_Direction_4MSB
+                0x00003434      0x130 ./Application/DIP_Switch/DIO_prog.o
+                0x00003434                SET_Direction_4MSB
  .text.SET_State_4LSB
-                0x00003a7a      0x132 ./Application/DIP_Switch/DIO_prog.o
-                0x00003a7a                SET_State_4LSB
+                0x00003564      0x132 ./Application/DIP_Switch/DIO_prog.o
+                0x00003564                SET_State_4LSB
  .text.SET_State_4MSB
-                0x00003bac      0x132 ./Application/DIP_Switch/DIO_prog.o
-                0x00003bac                SET_State_4MSB
- .text.libgcc   0x00003cde       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x00003cde                __udivmodhi4
- .text.libgcc   0x00003d06        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00003d06        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00003d06       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00003d06                __prologue_saves__
- .text.libgcc   0x00003d3e       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00003d3e                __epilogue_restores__
-                0x00003d74                . = ALIGN (0x2)
+                0x00003696      0x132 ./Application/DIP_Switch/DIO_prog.o
+                0x00003696                SET_State_4MSB
+ .text.main     0x000037c8      0x16e ./Application/ADC with temp sensor/main.o
+                0x000037c8                main
+ .text.libgcc   0x00003936       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x00003936                __mulsi3
+ .text.libgcc   0x00003974       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00003974                __udivmodhi4
+ .text.libgcc   0x0000399c       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000399c                __udivmodsi4
+ .text.libgcc   0x000039e0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000039e0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000039e0       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x000039e0                __prologue_saves__
+ .text.libgcc   0x00003a18       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00003a18                __epilogue_restores__
+                0x00003a4e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00003d74        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00003d74                exit
-                0x00003d74                _exit
+ .fini9         0x00003a4e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00003a4e                exit
+                0x00003a4e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -411,22 +433,24 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00003d74        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00003a4e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00003d78                _etext = .
+                0x00003a52                _etext = .
 
-.data           0x00800060       0x20 load address 0x00003d78
+.data           0x00800060       0x28 load address 0x00003a52
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  .data          0x00800060        0x0 ./MCAL/ATMEGA32/GIE/GIE_program.o
  .data          0x00800060        0x0 ./MCAL/ATMEGA32/EXTI/EXTI_program.o
  .data          0x00800060        0x0 ./MCAL/ATMEGA32/DIO/DIO_program.o
+ .data          0x00800060        0x0 ./MCAL/ATMEGA32/ADC/ADC_program.o
  .data          0x00800060        0x0 ./HAL/LCD/LCD_program.o
  .data          0x00800060        0x0 ./HAL/Keypad/Keypad_program.o
  .data          0x00800060        0x0 ./Application/Stepper motor/main.o
  .data          0x00800060        0x0 ./Application/Keypad with LCD/main.o
  .data          0x00800060        0x0 ./Application/H-Bridge/main.o
+ .data          0x00800060        0x0 ./Application/External interrupt + start code from start of super loop/main.o
  .data          0x00800060        0x0 ./Application/External Interrupts/main.o
  .data          0x00800060        0x0 ./Application/Empty main/main.o
  .data          0x00800060        0x0 ./Application/DIP_Switch/DIO_prog.o
@@ -434,87 +458,100 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .data          0x00800060        0x0 ./Application/DC Motor/main.o
  .data          0x00800060        0x0 ./Application/Create character and move it in CGRAM/main.o
  .data          0x00800060        0x0 ./Application/CGRAM/main.o
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .data          0x00800060        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
-                0x00800060                __thenan_sf
- .data          0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .data          0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .data          0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .data          0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .data          0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .data          0x00800060        0x7 ./Application/ADC with temp sensor/main.o
+ .data          0x00800067        0x0 ./Application/ADC with potentiometer and light sensor/main.o
+ .data          0x00800067        0x0 ./Application/2 External interrupt with priorities/main.o
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .data          0x00800067        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .data          0x00800067        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+                0x00800067                __thenan_sf
+ .data          0x0080006f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .data          0x0080006f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .data          0x0080006f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .data          0x0080006f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .data          0x0080006f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  .rodata.GLOBAL_u8AkpdInterface
-                0x00800068       0x10 ./HAL/Keypad/Keypad_program.o
-                0x00800068                GLOBAL_u8AkpdInterface
+                0x0080006f       0x10 ./HAL/Keypad/Keypad_program.o
+                0x0080006f                GLOBAL_u8AkpdInterface
  .rodata.GLOBAL_u8ArowNumber
-                0x00800078        0x4 ./HAL/Keypad/Keypad_program.o
-                0x00800078                GLOBAL_u8ArowNumber
+                0x0080007f        0x4 ./HAL/Keypad/Keypad_program.o
+                0x0080007f                GLOBAL_u8ArowNumber
  .rodata.GLOBAL_u8AcolNumber
-                0x0080007c        0x4 ./HAL/Keypad/Keypad_program.o
-                0x0080007c                GLOBAL_u8AcolNumber
+                0x00800083        0x4 ./HAL/Keypad/Keypad_program.o
+                0x00800083                GLOBAL_u8AcolNumber
  *(.gnu.linkonce.d*)
-                0x00800080                . = ALIGN (0x2)
-                0x00800080                _edata = .
-                0x00800080                PROVIDE (__data_end, .)
+                0x00800088                . = ALIGN (0x2)
+ *fill*         0x00800087        0x1 00
+                0x00800088                _edata = .
+                0x00800088                PROVIDE (__data_end, .)
 
-.bss            0x00800080        0x0
-                0x00800080                PROVIDE (__bss_start, .)
+.bss            0x00800088        0x0
+                0x00800088                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x00800080        0x0 ./MCAL/ATMEGA32/GIE/GIE_program.o
- .bss           0x00800080        0x0 ./MCAL/ATMEGA32/EXTI/EXTI_program.o
- .bss           0x00800080        0x0 ./MCAL/ATMEGA32/DIO/DIO_program.o
- .bss           0x00800080        0x0 ./HAL/LCD/LCD_program.o
- .bss           0x00800080        0x0 ./HAL/Keypad/Keypad_program.o
- .bss           0x00800080        0x0 ./Application/Stepper motor/main.o
- .bss           0x00800080        0x0 ./Application/Keypad with LCD/main.o
- .bss           0x00800080        0x0 ./Application/H-Bridge/main.o
- .bss           0x00800080        0x0 ./Application/External Interrupts/main.o
- .bss           0x00800080        0x0 ./Application/Empty main/main.o
- .bss           0x00800080        0x0 ./Application/DIP_Switch/DIO_prog.o
- .bss           0x00800080        0x0 ./Application/DIP_Switch/main.o
- .bss           0x00800080        0x0 ./Application/DC Motor/main.o
- .bss           0x00800080        0x0 ./Application/Create character and move it in CGRAM/main.o
- .bss           0x00800080        0x0 ./Application/CGRAM/main.o
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .bss           0x00800080        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x00800088        0x0 ./MCAL/ATMEGA32/GIE/GIE_program.o
+ .bss           0x00800088        0x0 ./MCAL/ATMEGA32/EXTI/EXTI_program.o
+ .bss           0x00800088        0x0 ./MCAL/ATMEGA32/DIO/DIO_program.o
+ .bss           0x00800088        0x0 ./MCAL/ATMEGA32/ADC/ADC_program.o
+ .bss           0x00800088        0x0 ./HAL/LCD/LCD_program.o
+ .bss           0x00800088        0x0 ./HAL/Keypad/Keypad_program.o
+ .bss           0x00800088        0x0 ./Application/Stepper motor/main.o
+ .bss           0x00800088        0x0 ./Application/Keypad with LCD/main.o
+ .bss           0x00800088        0x0 ./Application/H-Bridge/main.o
+ .bss           0x00800088        0x0 ./Application/External interrupt + start code from start of super loop/main.o
+ .bss           0x00800088        0x0 ./Application/External Interrupts/main.o
+ .bss           0x00800088        0x0 ./Application/Empty main/main.o
+ .bss           0x00800088        0x0 ./Application/DIP_Switch/DIO_prog.o
+ .bss           0x00800088        0x0 ./Application/DIP_Switch/main.o
+ .bss           0x00800088        0x0 ./Application/DC Motor/main.o
+ .bss           0x00800088        0x0 ./Application/Create character and move it in CGRAM/main.o
+ .bss           0x00800088        0x0 ./Application/CGRAM/main.o
+ .bss           0x00800088        0x0 ./Application/ADC with temp sensor/main.o
+ .bss           0x00800088        0x0 ./Application/ADC with potentiometer and light sensor/main.o
+ .bss           0x00800088        0x0 ./Application/2 External interrupt with priorities/main.o
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .bss           0x00800088        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
  *(.bss*)
  *(COMMON)
-                0x00800080                PROVIDE (__bss_end, .)
-                0x00003d78                __data_load_start = LOADADDR (.data)
-                0x00003d98                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800088                PROVIDE (__bss_end, .)
+                0x00003a52                __data_load_start = LOADADDR (.data)
+                0x00003a7a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800080        0x0
-                0x00800080                PROVIDE (__noinit_start, .)
+.noinit         0x00800088        0x0
+                0x00800088                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800080                PROVIDE (__noinit_end, .)
-                0x00800080                _end = .
-                0x00800080                PROVIDE (__heap_start, .)
+                0x00800088                PROVIDE (__noinit_end, .)
+                0x00800088                _end = .
+                0x00800088                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -532,41 +569,51 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x3a14
+.stab           0x00000000     0x3bdc
  *(.stab)
  .stab          0x00000000      0x1d4 ./MCAL/ATMEGA32/GIE/GIE_program.o
  .stab          0x000001d4      0x2b8 ./MCAL/ATMEGA32/EXTI/EXTI_program.o
                                 0x2c4 (size before relaxing)
  .stab          0x0000048c      0x918 ./MCAL/ATMEGA32/DIO/DIO_program.o
                                 0x924 (size before relaxing)
- .stab          0x00000da4     0x1350 ./HAL/LCD/LCD_program.o
+ .stab          0x00000da4      0x2a0 ./MCAL/ATMEGA32/ADC/ADC_program.o
+                                0x2ac (size before relaxing)
+ .stab          0x00001044     0x1350 ./HAL/LCD/LCD_program.o
                                0x135c (size before relaxing)
- .stab          0x000020f4      0x420 ./HAL/Keypad/Keypad_program.o
+ .stab          0x00002394      0x420 ./HAL/Keypad/Keypad_program.o
                                 0x5b8 (size before relaxing)
- .stab          0x00002514       0xd8 ./Application/Stepper motor/main.o
+ .stab          0x000027b4       0xd8 ./Application/Stepper motor/main.o
                                  0xe4 (size before relaxing)
- .stab          0x000025ec       0xd8 ./Application/Keypad with LCD/main.o
+ .stab          0x0000288c       0xd8 ./Application/Keypad with LCD/main.o
                                  0xe4 (size before relaxing)
- .stab          0x000026c4       0xd8 ./Application/H-Bridge/main.o
+ .stab          0x00002964       0xd8 ./Application/H-Bridge/main.o
                                  0xe4 (size before relaxing)
- .stab          0x0000279c      0x768 ./Application/External Interrupts/main.o
-                                0x900 (size before relaxing)
- .stab          0x00002f04       0xd8 ./Application/Empty main/main.o
+ .stab          0x00002a3c       0xd8 ./Application/External interrupt + start code from start of super loop/main.o
                                  0xe4 (size before relaxing)
- .stab          0x00002fdc      0x6d8 ./Application/DIP_Switch/DIO_prog.o
+ .stab          0x00002b14       0xd8 ./Application/External Interrupts/main.o
+                                 0xe4 (size before relaxing)
+ .stab          0x00002bec       0xd8 ./Application/Empty main/main.o
+                                 0xe4 (size before relaxing)
+ .stab          0x00002cc4      0x6d8 ./Application/DIP_Switch/DIO_prog.o
                                 0x6e4 (size before relaxing)
- .stab          0x000036b4       0xd8 ./Application/DIP_Switch/main.o
+ .stab          0x0000339c       0xd8 ./Application/DIP_Switch/main.o
                                  0xe4 (size before relaxing)
- .stab          0x0000378c       0xd8 ./Application/DC Motor/main.o
+ .stab          0x00003474       0xd8 ./Application/DC Motor/main.o
                                  0xe4 (size before relaxing)
- .stab          0x00003864       0xd8 ./Application/Create character and move it in CGRAM/main.o
+ .stab          0x0000354c       0xd8 ./Application/Create character and move it in CGRAM/main.o
                                  0xe4 (size before relaxing)
- .stab          0x0000393c       0xd8 ./Application/CGRAM/main.o
+ .stab          0x00003624       0xd8 ./Application/CGRAM/main.o
+                                 0xe4 (size before relaxing)
+ .stab          0x000036fc      0x330 ./Application/ADC with temp sensor/main.o
+                                0x4c8 (size before relaxing)
+ .stab          0x00003a2c       0xd8 ./Application/ADC with potentiometer and light sensor/main.o
+                                 0xe4 (size before relaxing)
+ .stab          0x00003b04       0xd8 ./Application/2 External interrupt with priorities/main.o
                                  0xe4 (size before relaxing)
 
-.stabstr        0x00000000     0x1780
+.stabstr        0x00000000     0x1845
  *(.stabstr)
- .stabstr       0x00000000     0x1780 ./MCAL/ATMEGA32/GIE/GIE_program.o
+ .stabstr       0x00000000     0x1845 ./MCAL/ATMEGA32/GIE/GIE_program.o
 
 .stab.excl
  *(.stab.excl)
